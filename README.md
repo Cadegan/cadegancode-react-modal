@@ -12,8 +12,8 @@
 
 ## 2. Author
 
-- [Jean-Charles Maurice](https://github.com/Cadegan/)
-- Version : 0.1
+- [Cadegancode](https://github.com/Cadegan/)
+- Version : 1.0.2
 
 ## 3. Project
 
@@ -49,7 +49,7 @@ or
 
 ## 4. Repository
 
-The repository is available at [`https://github.com/Cadegan/react-modal-p14.git`](https://github.com/Cadegan/react-modal-p14.git)
+The repository is available at [`https://github.com/Cadegan/cadegancode-react-modal.git`](https://github.com/Cadegan/cadegancode-react-modal.git)
 
 ## 5. How to use?
 
