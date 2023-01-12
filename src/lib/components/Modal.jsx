@@ -1,18 +1,21 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
-import "../styles/main.scss";
 import cross from "./assets/cross.svg";
 
 /**
- * Modal component that displays a message and provides a button to close it.
+ * @description Modal component that displays a message in a modal window.
  *
- * @param {boolean} openModal - Indicates whether the modal should be displayed or not.
- * @param {function} closeModal - Function that closes the modal.
- * @param {string} message - Message to be displayed in the modal.
- *
- * @returns {JSX.Element} - Rendered modal element.
+ * @param {Object} props - The props for the component.
+ * @param {boolean} props.openModal - Indicates whether the modal is open or not.
+ * @param {Function} props.closeModal - Function to close the modal.
+ * @param {string} props.children - The message to display in the modal.
  */
-const Modal = ({ openModal, closeModal, message }) => {
+const Modal = ({ openModal, closeModal, children }) => {
+  /**
+   * @description This is a hook that is used to detect if the modal is open or not. If it is open, it will add a
+   * style to the body of the document to hide the overflow. If it is not open, it will remove the
+   * style from the body of the document.
+   */
   useEffect(() => {
     document.body.style.overflow = openModal ? "hidden" : "";
   }, [openModal]);
@@ -20,17 +23,28 @@ const Modal = ({ openModal, closeModal, message }) => {
   if (!openModal) return null;
 
   return (
-    <div onClick={closeModal} className="modal">
+    <div
+      onClick={closeModal}
+      data-testid="closeModal"
+      className="modal"
+      aria-label="modal"
+    >
       <div
         className="modalWrapper"
+        data-testid="modalWrapper"
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
         <div className="modalContent">
-          <span>{message}</span>
+          <span data-testid="message">{children}</span>
         </div>
-        <button className="closeModalBnt" onClick={closeModal}>
+        <button
+          className="closeModalBnt"
+          aria-label="close modal button"
+          onClick={closeModal}
+          data-testid="closeModalBnt"
+        >
           <img src={cross} className="crossImage" alt="cross"></img>
         </button>
       </div>
@@ -38,10 +52,13 @@ const Modal = ({ openModal, closeModal, message }) => {
   );
 };
 
+/**
+ * Proptypes for the Modal component.
+ */
 Modal.propTypes = {
   openModal: PropTypes.bool,
   closeModal: PropTypes.func,
-  message: PropTypes.string,
+  children: PropTypes.string,
 };
 
 export default Modal;
