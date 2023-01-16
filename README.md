@@ -4,6 +4,7 @@
 [![SASS](https://img.shields.io/badge/Sass-hotpink.svg?style=for-the-badge&logo=sass&logoColor=white)](http://forthebadge.com)
 
 # A React modal component
+
 ## 1. Technologies
 
 - Javascript
@@ -13,7 +14,7 @@
 ## 2. Author
 
 - [Cadegancode](https://github.com/Cadegan/)
-- Version : 1.0.2
+- Version : 1.0.4
 
 ## 3. Project
 

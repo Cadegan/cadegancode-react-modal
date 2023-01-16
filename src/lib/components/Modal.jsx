@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import "../styles/main.css";
 import cross from "./assets/cross.svg";
 
 /**
@@ -25,8 +26,8 @@ const Modal = ({ openModal, closeModal, children }) => {
   return (
     <div
       onClick={closeModal}
-      data-testid="closeModal"
       className="modal"
+      data-testid="closeModal"
       aria-label="modal"
     >
       <div
