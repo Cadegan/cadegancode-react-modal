@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import "../styles/main.css";
 import cross from "./assets/cross.svg";
@@ -26,25 +26,25 @@ const Modal = ({ openModal, closeModal, children }) => {
   return (
     <div
       onClick={closeModal}
+      data-testid={"closeModal"}
       className="modal"
-      data-testid="closeModal"
       aria-label="modal"
     >
       <div
         className="modalWrapper"
-        data-testid="modalWrapper"
+        data-testid={"modalWrapper"}
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
         <div className="modalContent">
-          <span data-testid="message">{children}</span>
+          <span data-testid={"message"}>{children}</span>
         </div>
         <button
           className="closeModalBnt"
           aria-label="close modal button"
           onClick={closeModal}
-          data-testid="closeModalBnt"
+          data-testid={"closeModalBnt"}
         >
           <img src={cross} className="crossImage" alt="cross"></img>
         </button>
